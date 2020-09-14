@@ -1,0 +1,611 @@
+/*============================================================================================
+                        THE PRODUCTSIDE PAGE CSS
+
+                THIS WEB PAGE WAS WRITTEN MOBILE FIRST
+==============================================================================================*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.priFasLink:hover,
+.secFasLink:hover{
+  box-shadow: 0px 2px 2px 0px tomato;
+}
+
+:root{
+  --main-font: sans-serif;  
+  --dark-brown: #504139;
+  --contenaA-color: #FAF7F2;
+  --contenaB-color: #fffef8;
+  --body-color: #fffef8;
+  --body-width: 95%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--body-color);
+  font-family: var(--main-font);
+}
+
+/*======== Common Styles =========*/
+img {
+  width: 100%;
+}
+.logoImage:hover{
+  border-radius: 50%;
+  box-shadow: 0px 2px 2px 0px tomato;
+}
+.fa{
+  display: none;
+  color: var(--dark-brown);
+}
+.fat{
+  border-radius: 50%;
+}
+.fat:hover{
+  box-shadow: 0px 2px 2px 0px tomato;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--dark-brown);
+  color: var(--body-color);
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: .29em .95em ;
+  border: 1px solid var(--body-color);
+  border-radius: 8px;
+}
+
+.btn:hover {
+  color: tomato;
+  box-shadow: 0px 2px 2px 0px ;
+}
+
+span:hover,
+.navToggleLabel:hover span::before,
+.navToggleLabel:hover span::after{
+  box-shadow: 0px 2px 2px 0px tomato;
+}
+/* common styles ends*/
+
+
+/*========================================================================================== 
+    Header Section Style 
+============================================================================================*/
+.headerContainer {
+  background-color: var(--contenaA-color);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .2);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  width: 100%;
+  height: 120px;
+  padding-top: 10px;
+  z-index: 2; 
+}
+
+.containerItems {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*======= Here the style should be hidden for mobile
+        so that the Hamburger Menu Icon will be visible ========*/
+.headerContact {
+  visibility: hidden;
+  max-width: 300px;
+  color: var(--dark-brown);
+  line-height: 12px;
+}
+
+.headerContact .pk {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo {
+  max-width: 90px;
+  margin-left: -80px;
+}
+
+
+
+.fontAwesome {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FasUl {
+  display: flex;
+  list-style: none;
+
+}
+
+.fas {
+  color: var(--dark-brown);
+  border-radius: 50%;
+}
+
+
+/*=========== Here the font awesome for tablet and desktop 
+   screens was made hidden for smartphone screen ===========*/
+.secFasList {
+  display: none;
+  margin-left: 15px;
+}
+
+.priFasLink,
+.secFasLink {
+  padding: 10px 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+
+/*========= Styles for Hamburger Menu Icon =========*/
+.navToggle {
+  display: none;
+}
+
+.navToggleLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  display: block;
+  background: var(--dark-brown);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  content: '';
+  position: absolute;
+}
+
+.navToggleLabel span::before {
+  bottom: 7px;
+}
+
+.navToggleLabel span::after {
+  top: 7px;
+}
+
+/*========= Navigation style proper =========*/
+.nav {
+  position: absolute;
+  top: 100%;
+  text-align: left;
+  left: 0;
+  background: var(--dark-brown);
+  width: 100%;
+  padding-top: 1em;
+ 
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+.nav .navMenu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav .navList {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.nav .navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.nav .navLink:hover {
+  color: tomato;
+}
+
+.navToggle:checked ~ .nav {
+  transform: scale(1, 1);
+}
+
+.navToggle:checked ~ .nav .navLink {
+  opacity: 1;
+  transition: opacity 2500ms ease-in-out 250ms;
+}
+
+/*=======================================================================================
+    Main of the Page style
+==========================================================================================*/
+.geraContainer {
+  margin-top: 3em;
+  margin-bottom: -3em;
+  padding: 2em 0;
+  background: var(--body-color);
+}
+
+.pppp {
+  background: var(--body-color);
+}
+
+.geraHack {
+  background: var(--contenaA-color);
+  margin-bottom: 2em;
+}
+
+.geraItems {
+  width: var(--body-width);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: baseline;
+  text-align: center;
+}
+
+.geraImage {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.geraText {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+.geraMl-1{
+  margin-top: -100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.geraML-2 {
+  display: none;
+}
+
+@media (min-width: 820px) {
+  .geraMl-1{
+    display: none;
+  }
+
+  .geraML-2 {
+    display: block;
+    text-align: center;
+  } 
+}
+
+.geraField {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bntForm {
+  display: inline-block;
+  padding: 1em opx;
+}
+
+/*=====================================================================================
+  Section One of Producktside Page Style
+=======================================================================================*/
+.awesomeContainer {
+  background: var(--contenaA-color);
+}
+
+.awesomeItems {
+  width: var(--body-width);
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.awesomeFonts {
+  padding: 2em 0px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.fa-clock,
+.fa-envira,
+.fa-thumbs-up {
+  color: var(--dark-brown);
+  font-size: 45px;
+}
+
+/*=====================================================================================
+  Section Two: Articles for Produkts Style
+=======================================================================================*/
+.produktContainer {
+  background: transparent;
+}
+
+.produktContent {
+  width: var(--body-width);
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.produktArticles {
+  background: var(--contenaA-color);
+  padding: 1em 2em ;
+  line-height: 1.8;
+}
+
+
+/*=====================================================================================
+  Section Three of Productside Page
+=======================================================================================*/
+.kontaktContainer {
+  background: var(--dark-brown);
+  padding: 2.5em 0;
+}
+
+.kontaktItems {
+  width: var(--body-width);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--body-color);
+}
+
+.kontakt,
+.info,
+.tilmeld {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.kontaktUl,
+.infoUl,
+.tilmeldUl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kontaktList,
+.infoList,
+.tilmeldList {
+  padding: 4px 0;
+}
+
+form {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 250px){
+  .bottomBtn {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+  }
+}
+
+
+.socialContainer {
+  width: var(--body-width);
+  margin: 0 auto;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.socialBtns{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.fat {
+  color: var(--body-color);
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.fat:hover {
+  color: tomato;
+}
+
+.thirdLine {
+  color: var(--body-color);
+  margin-top: 15px;
+}
+
+/*========================================================================================== 
+    Footer Styles 
+============================================================================================*/
+footer {
+  background: var(--contenaA-color);
+  padding: .5em .25em;
+}
+
+.copyright {
+  width: var(--body-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/*======================================================================================== 
+    MEDIA QUERIES FOR TABLETS AND DESKTOP SCREENS
+==========================================================================================*/
+@media screen and (min-width: 780px) {
+  
+  /*=========== Header style ===========*/
+  .headerContact {
+    visibility: visible;
+    max-width: 300px;
+    color: var(--dark-brown);
+    text-align: center;
+    line-height: 12px;
+    border-right: 1px solid #e0e0e0 ;
+    padding-right: 10px;
+  }
+
+  /*=========== Navigation style ============*/
+  .navToggleLabel {
+    display: none;
+  }
+  
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-brown);
+    box-shadow: 0px 5px 4px 0 tomato;
+    padding: 2em 0;
+  }
+
+  .nav .navLink {
+    opacity: 1;
+    position: relative;
+  }
+
+  .nav .navMenu {
+    display: flex;
+  }
+
+  .nav .navList {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  .nav .navLink::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: tomato;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  .nav .navLink:hover::before {
+    transform: scale(1, 1);
+  }
+
+  /*======== Font Awesome style =========*/
+  .priFasList {
+    display: none;
+  }
+
+  .secFasList {
+    display: block;
+  }
+  .fas {
+    text-align: center;
+    font-size: 25px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .fa{
+    display: block;
+    color: var(--body-color);
+    text-align: center;
+    font-size: 25px;
+    margin-left: 70px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .fa:hover {
+    color: tomato;
+    border-radius: 50%;
+    box-shadow: 0px 2px 2px 0px tomato;
+  }
+
+  /*======== Main of the Page Style ===========*/
+  .mainContainer {
+    margin-top: 100px;
+  }
+
+  .deltagItems {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+      
+  }
+
+  .titleDeltag{
+    display: none;
+  }
+
+  .deltagImages {
+    display: flex;
+    max-width: 400px;
+    padding: 0 .5em;
+  }
+
+  .deltagText {
+    max-width: 400px;
+  }
+
+  /*============ Section Three of Productside Page style ============*/
+  .kontaktItems {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    text-align: left;
+  }
+
+  .kontakt,
+  .info,
+  .tilmeld {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 850px){
+    .kontakt,
+    .info,
+    .tilmeld {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+}

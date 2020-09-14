@@ -1,0 +1,622 @@
+
+
+/*============================================================================================
+                        THE LANDING PAGE CSS
+
+                THIS WEB PAGE WAS WRITTEN MOBILE FIRST
+==============================================================================================*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: sans-serif;  
+    --dark-brown: #504139;
+    --contenaA-color: #FAF7F2;
+    --contenaB-color: #fffef8;
+    --body-color: #fffef8;
+    --body-width: 95%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--body-color);
+    font-family: var(--main-font);
+}
+
+/*======== Common Styles =========*/
+img {
+    width: 100%;
+}
+
+.logoImage:hover{
+    border-radius: 50%;
+    box-shadow: 0px 2px 2px 0px tomato;
+}
+
+.fa{
+    display: none;
+    color: var(--dark-brown);
+}
+
+.fas:hover,
+.fab:hover{
+    box-shadow: 0px 2px 2px 0px tomato;
+}
+
+.btn:hover {
+    color: tomato;
+    box-shadow: 0px 2px 2px 0px ;
+}
+
+span:hover,
+.navToggleLabel:hover span::before,
+.navToggleLabel:hover span::after{
+    box-shadow: 0px 2px 2px 0px tomato;
+}
+
+hr {
+    width: 70%;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color: #e0e0e0; 
+}
+/* common styles ends*/
+
+
+/*========================================================================================== 
+    Header Section Style 
+============================================================================================*/
+.headerContainer {
+    background-color: var(--contenaA-color);
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .2);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    width: 100%;
+    height: 120px;
+    padding-top: 10px;
+    z-index: 2; 
+}
+
+.containerItems {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/*======= Here the style should be hidden for mobile
+        so that the Hamburger Menu Icon will be visible ========*/
+.headerContact {
+    visibility: hidden;
+    max-width: 300px;
+    color: var(--dark-brown);
+    line-height: 12px; 
+}
+
+.headerContact .pk {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo {
+    max-width: 90px;
+    margin-left: -80px;
+}
+
+.fontAwesome {
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FasUl {
+    display: flex;
+    list-style: none;
+  
+}
+
+.fas {
+    color: var(--dark-brown);
+    border-radius: 50%;
+}
+
+
+
+
+/*=========== Here the font awesome for tablet and desktop 
+   screens was made hidden for smartphone screen ===========*/
+.secFasList {
+    display: none;
+    margin-left: 15px;
+}
+
+.priFasLink,
+.secFasLink {
+    padding-left: 10px ;
+}
+
+
+/*========= Styles for Hamburger Menu Icon =========*/
+.navToggle {
+    display: none;
+}
+
+.navToggleLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    display: block;
+    background: var(--dark-brown);
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    content: '';
+    position: absolute;
+}
+
+.navToggleLabel span::before {
+    bottom: 7px;
+}
+
+.navToggleLabel span::after {
+    top: 7px;
+}
+
+
+/*========= Navigation style proper =========*/
+.nav {
+    position: absolute;
+    top: 100%;
+    text-align: left;
+    left: 0;
+    background: var(--dark-brown);
+    width: 100%;
+    padding-top: 1em;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+.nav .navMenu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav .navList {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+.nav .navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.nav .navLink:hover {
+    color: tomato;
+}
+
+.navToggle:checked ~ .nav {
+    transform: scale(1, 1);
+}
+
+.navToggle:checked ~ .nav .navLink {
+    opacity: 1;
+    transition: opacity 2500ms ease-in-out 250ms;
+}
+
+
+/*=======================================================================================
+    Main of the Page style
+==========================================================================================*/
+.mainContainer {
+    text-align: center;
+    padding: 1em 0;
+}
+
+.mainContents {
+    width: var(--body-width);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.titleDeltag {
+    background: var(--body-color);
+}
+
+.containerColor {
+    background: var(--contenaA-color); 
+}
+
+.deltagItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deltagImages {
+    display: flex;
+    max-width: 500px;
+    padding: 0 .5em;
+}
+
+.commonImages {
+    max-width: 200px;
+}
+
+/*==== Styles for div deltagText ====*/
+.deltagText {
+    padding: 1em 0;
+    max-width: 600px;
+}
+
+.deltagText p {
+    line-height: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--dark-brown);
+    color: var(--body-color);
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .29em .95em ;
+    border: 1px solid var(--body-color);
+    border-radius: 8px;
+}
+
+
+/*==========================================================================================
+    First section style 
+============================================================================================*/
+.heroContainer {
+    background: var(--contenaA-color);
+    text-align: center;
+    padding: 1em 0;
+}
+
+.bodyButterItems {
+    width: var(--body-width);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.bodyButterImage {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.secodLine {
+    margin-top: 15px;
+}
+
+/*==============================================================================================
+    Second section: Product style 
+================================================================================================*/
+.titleProducter {
+    text-align: center;
+}
+
+.productItems {
+    width: var(--body-width);
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.productGallary {
+    max-width: 200px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.desc {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*============================================================================================ 
+    Third Section style 
+==============================================================================================*/
+.kontaktContainer {
+    background: var(--dark-brown);
+    padding: 2.5em 0;
+    margin-top: 2em;
+}
+
+.kontaktItems {
+    width: var(--body-width);
+    margin: 0 auto;
+    text-align: center;
+    color: var(--body-color);
+}
+
+.kontakt,
+.info,
+.tilmeld {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.kontaktUl,
+.infoUl,
+.tilmeldUl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.kontaktList,
+.infoList,
+.tilmeldList {
+    padding: 4px 0;
+}
+
+form {
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 250px){
+    .bottomBtn {
+        display: inline-block;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 0 auto;
+        margin-right: 0 auto;
+    }
+}
+
+/* ======= Social Media Icons  =========*/
+.socialContainer {
+    width: var(--body-width);
+    margin: 0 auto;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.socialBtns{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.fab {
+    color: var(--body-color);
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.fab:hover {
+    color: tomato;
+}
+
+.thirdLine {
+    color: var(--body-color);
+    margin-top: 15px;
+}
+
+/*========================================================================================== 
+    Footer Styles 
+============================================================================================*/
+footer {
+    background: var(--contenaA-color);
+    padding: .5em .25em;
+}
+
+
+.copyright {
+    width: var(--body-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/*======================================================================================== 
+    MEDIA QUERIES FOR TABLETS AND DESKTOP SCREENS
+==========================================================================================*/
+@media screen and (min-width: 780px) {
+
+    /*=========== Header style ===========*/
+    .headerContact {
+        visibility: visible;
+        max-width: 300px;
+        color: var(--dark-brown);
+        text-align: center;
+        line-height: 12px;
+        border-right: 1px solid #e0e0e0 ;
+        padding-right: 10px;
+       
+    }
+
+    /*=========== Navigation style ============*/
+    .navToggleLabel {
+        display: none;
+    }
+    
+    .nav {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: var(--dark-brown);
+        box-shadow: 0px 5px 4px 0 tomato;
+        padding: 2em 0;
+       
+    }
+
+    .nav .navLink {
+        opacity: 1;
+        position: relative;
+    }
+
+    .nav .navMenu {
+        display: flex;
+    }
+
+    .nav .navList {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    .nav .navLink::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: tomato;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    .nav .navLink:hover::before {
+        transform: scale(1, 1);
+    }
+
+    /*======== Font Awesome style =========*/
+    .priFasList {
+        display: none;
+    }
+
+    .secFasList {
+        display: block;
+    }
+    .fas {
+        text-align: center;
+        font-size: 25px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .fa{
+        display: block;
+        color: var(--body-color);
+        text-align: center;
+        font-size: 25px;
+        margin-left: 70px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .fa:hover {
+        color: tomato;
+        border-radius: 50%;
+        box-shadow: 0px 2px 2px 0px tomato;
+    }
+
+    /*======== Main of the Page Style ===========*/
+    .mainContainer {
+        margin-top: 100px;
+    }
+
+    .deltagItems {
+       flex-direction: row;
+       align-items: center;
+       justify-content: space-around;
+        
+    }
+
+    .titleDeltag{
+        display: none;
+    }
+
+    .deltagImages {
+        display: flex;
+        max-width: 400px;
+        padding: 0 .5em;
+    }
+
+    .deltagText {
+        max-width: 400px;
+    }
+
+    /*============ First section style ============*/
+    .bodyButterItems {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .bodyButterImage {
+        width: 400px;
+        
+    }
+
+    .bodyButterText {
+        width: 400px;
+        order: -1;
+        align-self: center;
+    }
+
+
+    /*============= Please note that the SECOND SECTION has no styling in this particular query,
+    it is the mobile style that supports all ===================*/
+
+
+    /*=========== Third section style ==========*/
+    .kontaktItems {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        text-align: left;
+    }
+
+    .kontakt,
+    .info,
+    .tilmeld {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 850px){
+        .kontakt,
+        .info,
+        .tilmeld {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    }
+
+}
